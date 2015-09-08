@@ -20,7 +20,7 @@ var perso = {
     });
   },
   verifyResponse:function(response){
-    if(response !== "undefined") this.getLocation(response); else alert(response);
+    if(response !== "undefined") this.getLocation(response); else console.log('Erreur dans les datas de localisation');
   },
   getLocation:function(location){
     var locationFinded = false;
