@@ -25,7 +25,7 @@ $(document).ready(function(){
 
   perso.init();
   $(document).ajaxStop(function() {
-    
+
     var wheather = perso.wheather;
     var city = perso.getCity();
     var region = perso.getRegion();
@@ -36,8 +36,8 @@ $(document).ready(function(){
     $('h1').after('<h2> Votre pays : '+country+' </h2>');
 
     if(perso.isClear()) $('h1').after('<h2> Il fait beau chez vous :) </h2>');
-    if(perso.isCloudy()) $('h1').after('<h2> Il fait nuageux chez vous :) </h2>');
-    if(perso.isRaining()) $('h1').after('<h2> Il pleut chez vous :) </h2>');
+    if(perso.isCloudy()) $('h1').after('<h2> Il fait nuageux chez vous :( </h2>');
+    if(perso.isRaining()) $('h1').after('<h2> Il pleut chez vous :( </h2>');
   });
 
 });

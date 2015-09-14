@@ -87,24 +87,32 @@ var perso = {
       async: true,
       dataType: "json",
       success: function(response){
-        // voir http://openweathermap.org/wiki/API/Weather_Condition_Codes
         if(response.cod =="404"){
           console.log('Impossible de récupérer la Meteo nouvelle essaie par la ville');
           that.getMeteo(null,null,that.getCity());
           return;
         }
-        if(typeof response.weather[0].main !== "undefined"){
-          if(response.weather[0].main == "Clouds") that.setWheather('Clouds');
-          if(response.weather[0].main == "Clear" || "Mist") that.setWheather('Clear');
-          if(response.weather[0].main == "Rain") that.setWheather('Rain');
-          console.log('Le temps détécté : '+response.weather[0].main);
+
+        if(typeof response.weather[0].id !== "undefined"){
+          // voir http://openweathermap.org/wiki/API/Weather_Condition_Codes
+          if(that.getFirstDigit(response.weather[0].id) == 2) that.setWheather('Clouds');
+          if(that.getFirstDigit(response.weather[0].id) == 3) that.setWheather('Rain');
+          if(that.getFirstDigit(response.weather[0].id) == 5) that.setWheather('Rain');
+          if(that.getFirstDigit(response.weather[0].id) == 6) that.setWheather('Snow');
+          if(that.getFirstDigit(response.weather[0].id) == 7) that.setWheather('Clouds');
+          if(that.getFirstDigit(response.weather[0].id) == 8) that.setWheather('Clear');
         }
+
       },
       error : function(request, errorType, errorMessage){
         console.log("Impossible d'obtenir la meteo");
       },
       timeout:5000
     });
+  },
+  getFirstDigit: function(number){
+    var firstDigit = (''+number)[0];
+    return firstDigit;
   },
   setRegion: function(valueRegion){
     if(typeof valueRegion !== "undefined") this.region = valueRegion;
