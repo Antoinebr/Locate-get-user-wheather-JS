@@ -1,5 +1,5 @@
 # Locate-get-user-wheather-JS
-Ge the user location and the wheather at this place 
+Ge the user location and the wheather at his place 
 
 ##Demo
 
