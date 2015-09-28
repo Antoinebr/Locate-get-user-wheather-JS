@@ -143,5 +143,14 @@ var perso = {
   },
   isCloudy: function(){
     if(this.wheather !== "undefined" && this.wheather == "Clouds") return true; else return false;
+  },
+  isSetCountry: function(){
+    if(typeof this.getCountry !== "undefined"){return true;}else{return false;}
+  },
+  isSetCity: function(){
+    if(typeof this.getCity !== "undefined"){return true;}else{return false;}
+  },
+  isSetRegion: function(){
+    if(typeof this.getRegion !== "undefined"){return true;}else{return false;}
   }
 };
