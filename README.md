@@ -1,5 +1,7 @@
-# Locate-get-user-wheather-JS
-Ge the user location and the wheather at his place 
+# Locate-get-user-wheather-JS 
+Ge the user location and the wheather at his place
+
+**TELIZE IS NOT WORKING ANYMORE -> http://www.telize.com/ The script must use an other api to get the location**
 
 ### Possible regions values
 ```
